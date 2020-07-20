@@ -1,0 +1,58 @@
+############################################################
+####    服务器属性
+############################################################
+server:
+  ## 端口
+  port: 8081
+  servlet:
+    ### 主调度程序的路径
+    context-path: /os/api
+
+
+############################################################
+####    SPRING BOOT 属性
+############################################################
+spring:
+  # 数据库属性
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: arcgis
+    ### 配置数据源相关
+    hikari:
+      #### 最小空闲连接数量
+      minimum-idle: 10
+      #### 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 18000
+      #### 连接池最大连接数，默认是10
+      maximum-pool-size:  1000
+      #### 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      pool-name: GeoHikariPool
+      #### 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      #### 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 300000
+      connection-test-query: SELECT 1
+  # JACKSON JSON 解析、序列化 配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  ############################################################
+  ####    MYBATIS-PLUS 属性
+  ############################################################
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+
+#pagehelper分页插件配置
+pagehelper:
+  helper-dialect: postgresql
+  reasonable: true
+  support-methods-arguments: true
+  page-size-zero: true
+  params:  count=countSql

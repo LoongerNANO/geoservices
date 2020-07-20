@@ -1,0 +1,59 @@
+############################################################
+####   COMMON PROPERTIES CONFIGURATION
+####
+####   @AUTHOR LOONGER CHEN
+####   @TIME      2020-05-27
+####
+############################################################
+swagger:
+  title: COMMON GEO SERVICES API
+  description: COMMON GEO SERVICES API DOC
+  version: 1.0.0.RELEASE
+  license: Apache License, Version 2.0
+  license-url: https://www.apache.org/licenses/LICENSE-2.0.html
+  contact:
+    name: Loonger Chen
+    email: loonger_smart@hotmail.com
+  base-package: com.esrichina.geoservices.controller
+  base-path: /**
+  ui-config:
+    default-model-expand-depth: 0
+    default-models-expand-depth: -1
+    request-timeout: 6000
+    api-sorter: alpha
+    operations-sorter: alpha
+    tags-sorter: alpha
+
+spring:
+  devtools:
+    add-properties: false
+  redis:
+    database: 1
+    port: 6379
+    host: 192.168.112.126
+    password: arcgis
+    timeout: 5000
+    jedis:
+      pool:
+        max-active: 30
+        max-wait: 10000
+        max-idle: 30
+        min-idle: 10
+  banner:
+    ###  BANNER 位置
+    location: banner.txt
+    ###  BANNER 编码
+    charset: utf-8
+  profiles:
+    ### 活动配置文件
+    active: development
+logging:
+  level:
+    com:
+      esrichina:
+        geoservices:
+          mapper: debug
+
+
+
+
