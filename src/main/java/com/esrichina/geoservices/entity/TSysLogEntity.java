@@ -10,7 +10,7 @@ import java.util.Date;
  * <li>table name:  t_sys_log</li>
  * <li>table comment:  系统日志表</li>
  * <li>author name: LOONGER CHEN</li>
- * <li>create time: 2020-07-20 10:23:39</li>
+ * <li>create time: 2020-08-17 16:05:06</li>
  * </ul>
  */ 
 @Data
@@ -40,11 +40,11 @@ public class TSysLogEntity {
 	/*请求时间 */
 	private Date ask;
 	/*日志类型 */
-	private String log_type;
+	private String sys_dic_log_type;
 	/*日志类型名称 */
 	@TableField(exist = false)
-	@DictAnnotation(value= "sys_log_type" , refField ="log_type")
-	private String log_type_name;
+	@DictAnnotation(value= "sys_dic_log_type" , refField ="sys_dic_log_type")
+	private String sys_dic_log_type_name;
 	/*错误描述 */
 	private String error;
 	/*客户端浏览器名称 */

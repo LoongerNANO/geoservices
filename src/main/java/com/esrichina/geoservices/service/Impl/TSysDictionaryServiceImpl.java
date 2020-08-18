@@ -9,7 +9,7 @@ import com.esrichina.geoservices.service.TSysDictionaryService;
  * <ul>
  * <li>name:  TSysDictionaryServiceImpl</li>
  * <li>author name: LOONGER CHEN</li>
- * <li>create time: 2020-07-20 10:23:39</li>
+ * <li>create time: 2020-08-17 16:05:06</li>
  * </ul>
  */ 
 @Service

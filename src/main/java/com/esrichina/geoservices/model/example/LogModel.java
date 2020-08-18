@@ -32,9 +32,9 @@ public class LogModel implements Serializable {
     /*请求时间 */
     private String ask;
     /*日志类型 */
-    private String log_type;
+    private String sys_dic_log_type;
     /*日志类型名称 */
-    private String log_type_name;
+    private String sys_dic_log_type_name;
     /*错误描述 */
     private String error;
     /*客户端浏览器名称 */

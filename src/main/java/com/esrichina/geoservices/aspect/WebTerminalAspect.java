@@ -158,7 +158,7 @@ public class WebTerminalAspect {
         tSysLogEntity.setBrowser(userAgent.getBrowser().getName());
         tSysLogEntity.setVersion(userAgent.getBrowserVersion().toString());
         tSysLogEntity.setOs(userAgent.getOperatingSystem().getName());
-        tSysLogEntity.setLog_type(LogConstant.INFO.getName());
+        tSysLogEntity.setSys_dic_log_type(LogConstant.INFO.getName());
         tSysLogMapper.insert(tSysLogEntity);
         log.info(" [ MESSAGE ] - REST SUCESSFUL,  RETURN DATA - {} ", tSysLogEntity.toString());
     }
@@ -196,7 +196,7 @@ public class WebTerminalAspect {
         tSysLogEntity.setBrowser(userAgent.getBrowser().getName());
         tSysLogEntity.setVersion(userAgent.getBrowserVersion().toString());
         tSysLogEntity.setOs(userAgent.getOperatingSystem().getName());
-        tSysLogEntity.setLog_type(LogConstant.ERROR.getName());
+        tSysLogEntity.setSys_dic_log_type(LogConstant.ERROR.getName());
         tSysLogEntity.setError(ex.toString());
         tSysLogMapper.insert(tSysLogEntity);
         log.error(" [ MESSAGE ] - - REST FAILED,  RETURN DATA - {} ", tSysLogEntity.toString());

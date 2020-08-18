@@ -135,6 +135,19 @@
             <version>3.3.1</version>
         </dependency>
 
+        <!-- ACTIVITI -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.activiti</groupId>-->
+        <!--            <artifactId>activiti-spring-boot-starter-basic</artifactId>-->
+        <!--            <version>6.0.0</version>-->
+        <!--            <exclusions>-->
+        <!--                <exclusion>  &lt;!&ndash;当与mybatisplus同时使用时排除&ndash;&gt;-->
+        <!--                    <groupId>org.mybatis</groupId>-->
+        <!--                    <artifactId>mybatis</artifactId>-->
+        <!--                </exclusion>-->
+        <!--            </exclusions>-->
+        <!--        </dependency>-->
+
         <!-- HUTOOL -->
         <dependency>
             <groupId>cn.hutool</groupId>

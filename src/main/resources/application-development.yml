@@ -16,9 +16,9 @@ spring:
   # 数据库属性
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://124.205.245.99:5432/LYGCGLDB
     username: postgres
-    password: arcgis
+    password: linyi!123
     ### 配置数据源相关
     hikari:
       #### 最小空闲连接数量

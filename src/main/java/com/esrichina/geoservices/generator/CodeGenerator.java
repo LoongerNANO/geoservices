@@ -25,20 +25,20 @@ public class CodeGenerator {
     }
 
     // 数据库配置信息
-    private static final String JDBC_URL = "jdbc:postgresql://127.0.0.1:5432/postgres";
+    private static final String JDBC_URL = "jdbc:postgresql://124.205.245.99:5432/LYGCGLDB";
     public static final String JDBC_USER = "postgres";
-    public static final String JDBC_PWD = "arcgis";
+    public static final String JDBC_PWD = "linyi!123";
     private static final String JDBC_DRIVER = "org.postgresql.Driver";
     // 事件格式化
     private static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     // ENTITY包名
-    private static String packageEntityPath = "com.esrichina.services.entity";
+    private static String packageEntityPath = "com.esrichina.geoservices.entity";
     // MAPPER包名
-    private static String packageMapperPath = "com.esrichina.services.mapper";
+    private static String packageMapperPath = "com.esrichina.geoservices.mapper";
     // ISERVICE
-    private static String packageIServicePath = "com.esrichina.services.service";
+    private static String packageIServicePath = "com.esrichina.geoservices.service";
     // SERVICEIMPL
-    private static String packageServiceImplPath = "com.esrichina.services.service.Impl";
+    private static String packageServiceImplPath = "com.esrichina.geoservices.service.Impl";
     // 作者名字
     private static final String authorName = "LOONGER CHEN";
     // 指定表
@@ -245,9 +245,9 @@ public class CodeGenerator {
         for (int i = 0; i < tableColAttribute.getColName().length; i++) {
             String field = tableColAttribute.getColName()[i];
             // 证明存在字典字段
-            if (field.indexOf("_") > -1) {
+            if (field.indexOf("sys_dic") > -1) {
                 sb.append("import com.baomidou.mybatisplus.annotation.TableField;\r\n");
-                sb.append("import com.esrichina.services.annotation.DictAnnotation;\r\n");
+                sb.append("import com.esrichina.geoservices.annotation.DictAnnotation;\r\n");
                 break;
             }
         }
@@ -319,10 +319,10 @@ public class CodeGenerator {
                 sb.append("\t/*" + tableColAttribute.getComment()[i] + " */\r\n");
                 sb.append("\tprivate " + DataTypeConstant.getPackge(tableColAttribute.getColType()[i]).getType() + " " + tableColAttribute.getColName()[i] + ";\r\n");
                 // 捕捉字典字典
-                if (tableColAttribute.getColName()[i].indexOf("_") > -1) {
+                if (tableColAttribute.getColName()[i].indexOf("sys_dic") > -1) {
                     sb.append("\t/*" + tableColAttribute.getComment()[i] + "名称 */\r\n");
                     sb.append("\t@TableField(exist = false)\r\n");
-                    sb.append("\t@DictAnnotation(value= \"sys_" + tableColAttribute.getColName()[i] + "\" , refField =\"" + tableColAttribute.getColName()[i] + "\")\r\n");
+                    sb.append("\t@DictAnnotation(value= \"" + tableColAttribute.getColName()[i] + "\" , refField =\"" + tableColAttribute.getColName()[i] + "\")\r\n");
                     sb.append("\tprivate " + DataTypeConstant.getPackge(tableColAttribute.getColType()[i]).getType() + " " + tableColAttribute.getColName()[i] + "_name;\r\n");
                 }
 
@@ -428,6 +428,7 @@ public class CodeGenerator {
                     tableAttributeList.add(tableAttribute);
                 }
             }
+
 
 
             PrintWriter out = null;
