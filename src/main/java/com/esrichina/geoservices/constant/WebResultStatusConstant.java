@@ -13,6 +13,10 @@ public enum WebResultStatusConstant {
 
 
     // 用户相关
+    UNKWON_USER(4001, "用户不存在或密码错误"),
+    UNKWON_USER_ROLE(4002, "用户未配置角色，请联系管理员"),
+    UNKWON_KAPTCHA(4003, "验证码有误"),
+    TIME_OUT_KAPTCHA(4004, "验证码超时"),
 
     // 业务相关
     PROCESS_CREATE(3001, "数据创建失败"),
@@ -27,7 +31,10 @@ public enum WebResultStatusConstant {
     ARGUMENT_ERROR(4001, "参数为空或格式不正确"),
 
     // 系统异常
-    SERVER_ERROR(5001, "系统异常");
+    SERVER_ERROR(5001, "系统异常"),
+    ILLEGAL_URL(5002, "非法地址"),
+    ILLEGAL_TOKEN(5003, "非法令牌"),
+    NULL_TOEKN(5004, "令牌为空");
 
 
 //    SUCCESS(200, "success"),

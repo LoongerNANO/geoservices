@@ -8,7 +8,7 @@ import java.util.Date;
  * <li>table name:  t_sys_dictionary_content</li>
  * <li>table comment:  系统字典类型表</li>
  * <li>author name: LOONGER CHEN</li>
- * <li>create time: 2020-08-17 16:05:06</li>
+ * <li>create time: 2020-08-19 09:44:25</li>
  * </ul>
  */ 
 @Data

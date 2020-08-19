@@ -15,6 +15,21 @@ import java.util.Map;
 @Log4j2
 public class BaseRestException {
 
+//    @ExceptionHandler(NoHandlerFoundException.class)
+//    @ResponseBody
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    public WebResult notFountHandler(HttpServletRequest request, NoHandlerFoundException e) {
+//        log.error(" [ ERROR MESSAGE ] - {} ", e.getMessage());
+//        log.error(" [ ERROR MESSAGE ] - {} ", e.getStackTrace());
+//        String method = request.getMethod();
+//        String path = request.getRequestURI();
+//        Map<String, Object> caseMap = new HashMap<>();
+//        caseMap.put("method", method);
+//        caseMap.put("path", path);
+//        WebResult wbr = new WebResult(WebResultStatusConstant.ILLEGAL_URL.getCode(), WebResultStatusConstant.ILLEGAL_URL.getMsg(), caseMap);
+//        return wbr;
+//    }
+
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public WebResult exception(Exception e) {
@@ -28,11 +43,12 @@ public class BaseRestException {
 
     @ExceptionHandler(ParameterException.class)
     @ResponseBody
-    public WebResult statusException(ParameterException e) {
+    public WebResult parameterException(ParameterException e) {
         log.error(" [ ERROR MESSAGE] - {} ", e.getMessage());
         log.error(" [ ERROR MESSAGE ] - {} ", e.getStackTrace());
         WebResult wbr = new WebResult(WebResultStatusConstant.ARGUMENT_ERROR.getCode(), WebResultStatusConstant.ARGUMENT_ERROR.getMsg(), JSONUtil.parse(e.getMessage()));
         return wbr;
     }
+
 
 }
